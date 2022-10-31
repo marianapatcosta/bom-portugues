@@ -58,6 +58,10 @@ Build a production-ready application.
 
 Runs the production build locally
 
+### `yarn export`
+
+Converts Next project into a static website
+
 ### `yarn lint`
 
 Runs linter in the project
