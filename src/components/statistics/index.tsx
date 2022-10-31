@@ -76,7 +76,7 @@ const Statistics = () => {
       : `${title} ${t('wasWrong')}`
   }
 
-  const getShareQuestionMessage = (): string => question!.question
+  const getShareQuestionMessage = (): string => question!.title
 
   const getShareStatisticsMessage = (): string =>
     [...GAME_STATISTICS, 'winRate'].reduce(

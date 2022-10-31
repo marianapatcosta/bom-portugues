@@ -141,9 +141,8 @@ export const StyledForm = styled.form<{
     margin-bottom: 1rem;
     flex: 1;
 
-    h3 {
-      margin-bottom: 1rem;
-      line-height: 1.5rem;
+    h2 {
+      margin: 1rem 0;
 
       &::first-letter {
         text-transform: uppercase;

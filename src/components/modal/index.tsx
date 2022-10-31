@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, MouseEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   StyledModalOverlay,
@@ -16,7 +16,9 @@ interface ModalProps {
 const Modal = ({ title, children, closeModal, ...rest }: ModalProps) => {
   const { t } = useTranslation(['common'])
 
-  const stopEventPropagation = (event: Event) => event.stopPropagation()
+  const stopEventPropagation = (event: MouseEvent<HTMLDivElement>): void => {
+    event.stopPropagation()
+  }
 
   return (
     <StyledModalOverlay onClick={closeModal} {...rest}>

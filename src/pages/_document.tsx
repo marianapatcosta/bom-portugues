@@ -9,6 +9,9 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Merriweather&display=swap'
             rel='stylesheet'
           ></link>
+          <link rel='manifest' href='/manifest.json' />
+          <link rel='apple-touch-icon' href='/icon.png'></link>
+          <meta name='theme-color' content='#231c69' />
         </Head>
         <body>
           <Main />

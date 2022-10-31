@@ -11,7 +11,7 @@ import {
   StyledCardWrapper,
   StyledCard,
   StyledCheckbox,
-} from './styles'
+} from '@/styles/unusual-words'
 import { useItemsManager } from '@/hooks/useItemsManager'
 
 interface UnusualWordsProps {

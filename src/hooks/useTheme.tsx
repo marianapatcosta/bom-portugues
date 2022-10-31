@@ -4,6 +4,7 @@ import React, {
   ReactNode,
   createContext,
   useContext,
+  useCallback
 } from 'react'
 import { ThemeProvider } from 'styled-components'
 import themes from '../themes'
@@ -26,12 +27,14 @@ const ThemeContextProvider = ({ children }: ThemeProviderProps) => {
   const [isDarkTheme, setIsDarkTheme] = useState(false)
   const { getStoredItem, saveItemInStorage } = useLocalStorage()
 
-  const getStoredTheme = () => {
+  const getStoredTheme = useCallback(() => {
     const deviceTheme: boolean =
       window && window.matchMedia('(prefers-color-scheme: dark)').matches
-    const storedIsDarkTheme = getStoredItem<boolean>(COLLECTION_DARK_THEME) as boolean
+    const storedIsDarkTheme = getStoredItem<boolean>(
+      COLLECTION_DARK_THEME
+    ) as boolean
     setIsDarkTheme(storedIsDarkTheme || deviceTheme)
-  }
+  }, [getStoredItem])
 
   const defineTheme = (isDarkTheme: boolean) => {
     setIsDarkTheme(isDarkTheme)
@@ -40,7 +43,7 @@ const ThemeContextProvider = ({ children }: ThemeProviderProps) => {
 
   useEffect(() => {
     getStoredTheme()
-  }, [])
+  }, [getStoredTheme])
 
   return (
     <ThemeContext.Provider value={{ defineTheme, isDarkTheme }}>

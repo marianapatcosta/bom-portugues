@@ -70,7 +70,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             }}
           >
             <GlobalStyle />
-            <Layout >
+            <Layout>
               <Component {...pageProps} />
             </Layout>
             {!!isModalOpened && (
@@ -81,6 +81,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
             {!!toastData.length &&
               toastData.map((data, index) => (
                 <Toast
+                  key={data.message}
                   message={data.message}
                   style={{ top: `${TOAST_OFFSET * index + 2}rem` }}
                   type={data.type}

@@ -36,3 +36,5 @@ yarn-error.log*
 /src/content/
 /cypress
 
+public/sw.js
+public/workbox-*.js

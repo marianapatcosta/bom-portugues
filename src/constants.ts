@@ -17,7 +17,7 @@ export const GAME_STATISTICS: string[] = [
 
 export const STORED_GAME_STATISTICS: string[] = [...GAME_STATISTICS, 'winnings']
 
-export const GENERAL_ANSWER_OPTIONS: string[] = ['allCorrect', 'noneCorrect']
+export const GENERAL_ANSWER_OPTIONS: string[] = ['all', 'none']
 
 export const BOM_PORTUGUES_URL: string =
   'https://marianapatcosta.github.io/bom-portugues/'

@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, MouseEvent } from 'react'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 import fs from 'fs'
@@ -14,7 +14,7 @@ import {
   StyledCardWrapper,
   StyledNoData,
   StyledCheckbox,
-} from './styles'
+} from '@/styles/easter-egg'
 
 interface EasterEggProps {
   questions: Question[]
@@ -33,6 +33,13 @@ const EasterEgg = ({ questions: allQuestions }: EasterEggProps) => {
 
   const flashCardRef = useRef<FlashCardHandle>(null)
 
+  const handleToggleShowFavorites = (event: MouseEvent<HTMLInputElement>) => {
+    flashCardRef.current?.resetForm()
+    setTimeout(() => {
+      toggleShowFavorites(event)
+    }, FLIP_ANIMATION_DURATION * 200)
+  }
+
   const handleNextClick = (): void => {
     flashCardRef.current?.resetForm()
     setTimeout(() => {
@@ -47,7 +54,7 @@ const EasterEgg = ({ questions: allQuestions }: EasterEggProps) => {
         label={t('showOnlyFavorites')}
         checked={showOnlyFavorites}
         isSmall
-        onChange={toggleShowFavorites}
+        onChange={handleToggleShowFavorites}
       />
       {!question ? (
         <StyledNoData>{t('noQuestionsToDisplay')}</StyledNoData>
