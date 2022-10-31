@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 
 export const useCounter = (): number => {
-  const today: Date = new Date()
-  const tomorrow: Date = new Date(today)
+  const today: Date = useMemo(() => new Date(), [])
+  const tomorrow: Date = useMemo(() => new Date(today), [today])
   tomorrow.setDate(tomorrow.getDate() + 1)
   tomorrow.setHours(0, 0, 0, 0)
   const [counter, setCounter] = useState<number>(
@@ -19,7 +19,7 @@ export const useCounter = (): number => {
       setCounter(differenceInMilliseconds)
     }, 1000)
     return () => clearTimeout(timerId)
-  }, [counter])
+  }, [counter, tomorrow])
 
   return counter
 }

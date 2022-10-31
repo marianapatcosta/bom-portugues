@@ -1,0 +1,69 @@
+{
+  "name": "Bom Português",
+  "short_name": "Bom Português",
+  "theme_color": "#231c69",
+  "background_color": "#231c69",
+  "description": "Bom Português is a simple and didactic Question & Answer game to practice tricky portuguese words and expressions.",
+  "start_url": "/bom-portugues/",
+  "scope": "./bom-portugues/",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-152-152.png",
+      "sizes": "152-152",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png"
+    },
+    {
+      "src": "mstile-150x150.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    },
+    {
+      "src": "safari-pinned-tab.png",
+      "type": "image/png"
+    }
+  ]
+}

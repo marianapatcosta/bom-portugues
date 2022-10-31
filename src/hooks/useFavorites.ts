@@ -14,22 +14,28 @@ export const useFavorites = (collection: string): UseFavoritesProps => {
   const { getStoredItem, saveItemInStorage } = useLocalStorage()
   const [showOnlyFavorites, setShowOnlyFavorites] = useState(false)
 
-  const getFavorites = () => {
+  const getFavorites = useCallback(() => {
     const favoriteItems = getStoredItem<string[]>(collection)
     setFavoriteItems(favoriteItems || [])
-  }
+  }, [collection, getStoredItem])
 
-  const addToFavorites = (itemId: string): void => {
-    const updatedFavoriteItems = [...favoriteItems, itemId]
-    saveItemInStorage<string[]>(collection, updatedFavoriteItems)
-    setFavoriteItems(updatedFavoriteItems)
-  }
+  const addToFavorites = useCallback(
+    (itemId: string): void => {
+      const updatedFavoriteItems = [...favoriteItems, itemId]
+      saveItemInStorage<string[]>(collection, updatedFavoriteItems)
+      setFavoriteItems(updatedFavoriteItems)
+    },
+    [collection, favoriteItems, saveItemInStorage, setFavoriteItems]
+  )
 
-  const removeFromFavorites = (itemId: string): void => {
-    const updatedFavoriteItems = favoriteItems.filter((id) => id !== itemId)
-    saveItemInStorage<string[]>(collection, updatedFavoriteItems)
-    setFavoriteItems(updatedFavoriteItems)
-  }
+  const removeFromFavorites = useCallback(
+    (itemId: string): void => {
+      const updatedFavoriteItems = favoriteItems.filter((id) => id !== itemId)
+      saveItemInStorage<string[]>(collection, updatedFavoriteItems)
+      setFavoriteItems(updatedFavoriteItems)
+    },
+    [collection, favoriteItems, saveItemInStorage]
+  )
 
   const toggleShowFavorites = useCallback(
     (event: MouseEvent<HTMLInputElement>): void => {

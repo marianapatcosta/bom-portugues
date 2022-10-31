@@ -1,7 +1,7 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'react-i18next'
 import { LINKS } from '@/constants'
-import { StyledSection } from './styles'
+import { StyledSection } from '@/styles/about'
 
 const About = () => {
   const { t } = useTranslation(['about'])

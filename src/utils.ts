@@ -6,6 +6,7 @@ import {
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import type { GameState, GameStatistics, Question } from '@/types'
 
+/* eslint-disable */
 const { getStoredItem, saveItemInStorage } = useLocalStorage()
 
 export const updateGameStatistics = (isAnswerCorrect: boolean) => {

@@ -99,7 +99,7 @@ const FlashCard = forwardRef<FlashCardHandle, FlashcardProps>(
         )
         setIsAnswerCorrect(isAnswerCorrect)
       }
-    }, [todaysAnswer])
+    }, [todaysAnswer, question])
 
     return (
       <StyledFlashCard>
@@ -109,7 +109,7 @@ const FlashCard = forwardRef<FlashCardHandle, FlashcardProps>(
         >
           <StyledForm onSubmit={submitAnswer}>
             <header>
-              <h3>{question.title}</h3>
+              <h2>{question.title}</h2>
               {showIsFavorite && (
                 <FavoriteButton
                   title={t(
@@ -170,4 +170,7 @@ const FlashCard = forwardRef<FlashCardHandle, FlashcardProps>(
     )
   }
 )
+
+FlashCard.displayName = 'FlashCard'
+
 export default FlashCard

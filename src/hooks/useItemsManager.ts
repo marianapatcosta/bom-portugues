@@ -7,7 +7,7 @@ interface UseItemsManagersProps<T> {
   items: T[]
   showOnlyFavorites: boolean
   getRandomItem: () => void
-  toggleIsFavorite: (event: MouseEvent<HTMLButtonElement>) => void
+  toggleIsFavorite: () => void
   toggleShowFavorites: (event: MouseEvent<HTMLInputElement>) => void
 }
 
@@ -63,7 +63,12 @@ export const useItemsManager = <T extends Item>(
     const newItem = items[randomIndex]
     const isFavorite = favoriteItems.some((id) => id === newItem!.id)
     setItem({ ...newItem, isFavorite })
-  }, [items, currentFavoriteIndex])
+  }, [
+    items,
+    favoriteItems,
+    getUpdatedIndex,
+    showOnlyFavorites,
+  ])
 
   const toggleIsFavorite = useCallback((): void => {
     if (!item) return
@@ -73,7 +78,13 @@ export const useItemsManager = <T extends Item>(
       return getRandomItem()
     }
     setItem({ ...item, isFavorite: newFavoriteStatus })
-  }, [item, showOnlyFavorites])
+  }, [
+    item,
+    showOnlyFavorites,
+    addToFavorites,
+    removeFromFavorites,
+    getRandomItem,
+  ])
 
   useEffect(() => {
     if (showOnlyFavorites) {
@@ -82,7 +93,7 @@ export const useItemsManager = <T extends Item>(
       )
     }
     setItems(allItems)
-  }, [showOnlyFavorites, favoriteItems])
+  }, [showOnlyFavorites, favoriteItems, allItems])
 
   useEffect(() => {
     getRandomItem()

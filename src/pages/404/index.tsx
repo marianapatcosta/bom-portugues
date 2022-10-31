@@ -10,7 +10,7 @@ const FourOhFour = () => {
 
   useEffect(() => {
     router.replace('/')
-  }, [])
+  }, [router])
 
   return (
     <>

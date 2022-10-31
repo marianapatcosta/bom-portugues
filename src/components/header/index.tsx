@@ -55,7 +55,11 @@ const Header = () => {
           aria-label={t('clickTo', { action: t('seeAbout') })}
           title={t('seeAbout')}
         >
-          <Link href='/about' passHref>
+          <Link
+            href='/about'
+            passHref
+            aria-label={t('clickTo', { action: t('seeAbout') })}
+          >
             <Info />
           </Link>
         </Button>

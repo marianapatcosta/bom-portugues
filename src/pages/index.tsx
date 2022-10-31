@@ -40,7 +40,7 @@ const Home = ({ question }: HomeProps) => {
 
   useEffect(() => {
     setQuestion(question)
-  }, [])
+  }, [setQuestion, question])
 
   useEffect(() => {
     setQuestion(question)

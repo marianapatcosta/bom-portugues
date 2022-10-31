@@ -18,7 +18,7 @@ const PieChart = ({ winRate }: PieChartProps) => {
     }, (ANIMATION_DURATION * 1000) / winRate)
 
     return () => clearInterval(timer)
-  }, [value])
+  }, [value, winRate])
 
   return (
     <StyledPieChart animationDuration={ANIMATION_DURATION} winRate={winRate}>
