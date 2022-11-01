@@ -5,7 +5,7 @@ This project displays content from [Infopédia](https://www.infopedia.pt) and [E
 
 ![Group 738](https://user-images.githubusercontent.com/43031902/198909421-32086ca7-f2cd-4a79-b271-4149d90389cb.png)
 
-Play it [here](https://marianapatcosta.github.io/bom-portugues/).
+Play it [here](https://bom-portugues.vercel.app/).
 
 ## Get Start
 

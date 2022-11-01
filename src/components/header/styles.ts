@@ -45,8 +45,8 @@ export const StyledTitleWrapper = styled.div`
 
   > button {
     position: absolute;
-    right: 6%;
-    top: -55%;
+    right: 5%;
+    top: -40%;
     font: inherit;
 
     a {

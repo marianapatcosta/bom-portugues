@@ -1,6 +1,42 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, {
+  DocumentContext,
+  DocumentInitialProps,
+  Html,
+  Head,
+  Main,
+  NextScript,
+} from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
+    const sheet = new ServerStyleSheet()
+    const originalRenderPage = ctx.renderPage
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
+        })
+
+      const initialProps = await Document.getInitialProps(ctx)
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {sheet.getStyleElement()}
+          </>
+        ),
+      }
+    } finally {
+      sheet.seal()
+    }
+  }
+
   render() {
     return (
       <Html lang='en'>
@@ -8,9 +44,9 @@ class MyDocument extends Document {
           <link
             href='https://fonts.googleapis.com/css2?family=Merriweather&display=swap'
             rel='stylesheet'
-          ></link>
+          />
           <link rel='manifest' href='/manifest.json' />
-          <link rel='apple-touch-icon' href='/icon.png'></link>
+          <link rel='apple-touch-icon' href='/icon.png' />
           <meta name='theme-color' content='#231c69' />
         </Head>
         <body>
@@ -21,5 +57,3 @@ class MyDocument extends Document {
     )
   }
 }
-
-export default MyDocument

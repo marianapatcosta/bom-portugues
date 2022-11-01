@@ -2,11 +2,14 @@ import { FormEvent } from 'react'
 import styled from 'styled-components'
 
 export const StyledFlashCard = styled.div`
-  width: 22rem;
-  min-height: 22rem;
+  width: 100%;
   position: relative;
   transform-style: preserve-3d;
   margin: 0 auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.xs}) {
+    width: 25rem;
+  }
 `
 
 const StyledCard = styled.div<{
@@ -15,7 +18,7 @@ const StyledCard = styled.div<{
 }>`
   background-color: ${({ theme }) => theme.colors.primary};
   width: 100%;
-  height: 100%;
+  height: max-content;
   position: absolute;
   top: 0;
   left: 0;
@@ -143,6 +146,7 @@ export const StyledForm = styled.form<{
 
     h2 {
       margin: 1rem 0;
+      line-height: 1.5rem;
 
       &::first-letter {
         text-transform: uppercase;
