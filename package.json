@@ -23,7 +23,7 @@
     "@svgr/webpack": "^6.5.1",
     "@types/react": "^18.0.24",
     "@types/styled-components": "^5.1.26",
-    "babel-plugin-styled-components": "^2.0.7",
+    "babe-plugin-styled-components": "^2.0.7",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
     "typescript": "^4.8.4",
