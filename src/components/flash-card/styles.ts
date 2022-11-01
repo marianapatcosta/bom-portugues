@@ -6,6 +6,7 @@ export const StyledFlashCard = styled.div`
   position: relative;
   transform-style: preserve-3d;
   margin: 0 auto;
+  display: grid;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.xs}) {
     width: 25rem;
@@ -18,10 +19,7 @@ const StyledCard = styled.div<{
 }>`
   background-color: ${({ theme }) => theme.colors.primary};
   width: 100%;
-  height: max-content;
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 100%;
   box-shadow: ${({ theme }) =>
     `0px -3px 3px ${theme.colors.shadow}, 0px 3px 3px ${theme.colors.shadow}`};
   border: 3px solid ${({ theme }) => theme.colors.highlight90};
@@ -43,6 +41,8 @@ const StyledCard = styled.div<{
   -moz-border-radius: 0.4rem;
   -ms-border-radius: 0.4rem;
   -o-border-radius: 0.4rem;
+  margin-bottom: 1rem;
+  grid-area: 1 / 1;
 
   header {
     position: relative;
