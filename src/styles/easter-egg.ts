@@ -9,6 +9,7 @@ export const StyledTitle = styled(StyledTitleDefault)`
 export const StyledCardWrapper = styled.div`
   position: relative;
   width: max-content;
+  max-width: 100%;
   margin: 0 auto;
 
   > button {

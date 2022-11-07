@@ -45,7 +45,7 @@ export const StyledTitleWrapper = styled.div`
 
   > button {
     position: absolute;
-    right: 5%;
+    right: 6%;
     top: -40%;
     font: inherit;
 
@@ -54,7 +54,7 @@ export const StyledTitleWrapper = styled.div`
       text-decoration: none;
       color: ${({ theme }) => theme.colors.white};
 
-      @media (min-width: ${({ theme }) => theme.breakpoints.xs}) {
+      @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
         font-size: 2rem;
       }
     }

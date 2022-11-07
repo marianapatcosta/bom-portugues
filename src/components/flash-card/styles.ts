@@ -7,6 +7,7 @@ export const StyledFlashCard = styled.div`
   transform-style: preserve-3d;
   margin: 0 auto;
   display: grid;
+  margin-bottom: 1rem;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.xs}) {
     width: 25rem;
