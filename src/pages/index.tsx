@@ -7,7 +7,6 @@ import { FlashCard } from '@/components'
 import { StyledTitle } from '@/themes/global-styles'
 import {
   getQuestionOfTheDay,
-  getRandomNumber,
   updateGameState,
   updateGameStatistics,
 } from '@/utils'
