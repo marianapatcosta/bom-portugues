@@ -19,7 +19,7 @@ Play it [here](https://bom-portugues.vercel.app/).
       "correctOption": "string",
       "answer": "string",
       "source": "string",
-      "link": "stringa"
+      "link": "string"
     }
   ]
   ```
@@ -33,7 +33,7 @@ Play it [here](https://bom-portugues.vercel.app/).
       "definition": "string",
       "sentence": "string",
       "source": "string",
-      "link": "stringa"
+      "link": "string"
     }
   ]
   ```
@@ -47,8 +47,6 @@ Installs all the dependencies required to run and develop this application.
 ### `yarn dev`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
 ### `yarn build`
 
